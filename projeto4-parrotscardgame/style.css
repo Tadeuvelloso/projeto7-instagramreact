@@ -1,0 +1,43 @@
+
+.all{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #E5E5E5;
+    
+}
+
+.container{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #E5E5E5;
+    flex-wrap: wrap;
+    width: 1000px;
+}
+
+h1{
+    font-size: 56px;
+    font-weight: 700;
+    color: #75B79E;
+
+}
+.carta{
+    width: 117px;
+    height: 146px;
+    background-color: #99cea8;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 17px;
+}
+
+.carta img{
+    width: 100px;
+    height: 100px;
+
+}
