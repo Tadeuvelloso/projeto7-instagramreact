@@ -1,8 +1,11 @@
+import instagram from "../src/imagens/logo.png"
+
+
 export default function Topbar () {
     return (
      <div class="cx-titulo">
         <div class="cx-insta-icon">
-          <img src="imagens/logo.png" />
+          <img src={instagram}/>
           <div class="bordinha"></div>
           <ion-icon class="icone" name="logo-instagram"></ion-icon>
         </div>
