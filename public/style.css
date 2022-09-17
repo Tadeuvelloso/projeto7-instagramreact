@@ -263,7 +263,7 @@
     color: #b2dffc;
     background-color: white;
   }
-  .publicar:hover {
+  .publicar :hover {
     color: #0095f6;
     transition-duration: 300ms;
   }
@@ -340,6 +340,11 @@
     font-weight: 500;
     color: #8e8e8e;
   }
+
+  .pencil :hover{
+    color: black;
+  }
+
   @media (max-width: 900px) {
     .container-direita {
       display: none;

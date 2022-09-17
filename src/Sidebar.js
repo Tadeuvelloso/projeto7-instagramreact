@@ -5,14 +5,24 @@ import rayleigh from "../src/imagens/rayleigh.jpg"
 import broky from "../src/imagens/broky.jpg"
 import franky from "../src/imagens/franky.jpg"
 
+function Usuario(props) {
+  let nome = "Luffy";
+  let imagem = `${luffy}`
+  function novoNome() {
+    nome = prompt("Qual seu nome?");
+    console.log(nome)
+  }
+  function novaImagem() {
+    imagem = prompt("Insira sua imagem: ");
+    console.log(imagem)
+  }
 
-function Usuario() {
   return (
     <div class="titu-suges">
-      <img src={luffy} />
+      <img src={imagem} onClick={novaImagem} />
       <div>
-        <p class="nome">Luffy</p>
-        <p class="segue-vc">MonkeyD.</p>
+        <p class="nome">{nome}</p>
+        <p class="segue-vc">{nome}<span class="pencil" onClick={novoNome} ><ion-icon name="brush"></ion-icon></span></p>
       </div>
     </div>
   )
@@ -39,8 +49,7 @@ function Sugestoes() {
   )
 }
 
-
-function Users (props) {
+function Users(props) {
   return (
     <li>
       <div class="div-seletor">
@@ -55,22 +64,23 @@ function Users (props) {
   )
 }
 
-
-
-
-
 export default function Sidebar() {
+
+  const dados = [{ imgpessoa: chopper, nome: "Chopper", status: "Segue você" },
+  { imgpessoa: robin, nome: "Nico Robin", status: "Segue você" },
+  { imgpessoa: rayleigh, nome: "Rayleigh", status: "Novo no Instagram" },
+  { imgpessoa: broky, nome: "Broky", status: "Segue você" },
+  { imgpessoa: franky, nome: "Franky", status: "Segue você" }]
+
+
+
   return (
     <div class="container-direita">
       <div>
-      <ul>
-        <Usuario />
-        <Sugestoes />
-        <Users imgpessoa={chopper} nome="Chopper" status="Segue você" />
-        <Users imgpessoa={robin} nome="Nico Robin" status="Segue você" />
-        <Users imgpessoa={rayleigh} nome="Rayleigh" status="Novo no Instagram" />
-        <Users imgpessoa={broky} nome="Broky" status="Segue você" />
-        <Users imgpessoa={franky} nome="Franky" status="Segue você" />
+        <ul>
+          <Usuario />
+          <Sugestoes />
+          {dados.map((d) => <Users imgpessoa={d.imgpessoa} nome={d.nome} status={d.status} />)}
         </ul>
         <Marca />
       </div>

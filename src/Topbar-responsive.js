@@ -24,8 +24,6 @@ function TopBar() {
     )
 }
 
-
-
 export default function TopbarResponsive() {
     return (
         <>

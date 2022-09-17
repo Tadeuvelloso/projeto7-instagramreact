@@ -33,8 +33,8 @@ function Post(props) {
             <div class="curtidas">
                 <img class="img-curtida" src={props.imgcurtida} />
                 <p>
-                    Curtido por <strong>{props.nomecurtida}</strong> e
-                    <strong>outras {props.numcurtidas} pessoas</strong>
+                    Curtido por <strong>{props.nomecurtida}</strong> e 
+                    <strong> outras {props.numcurtidas} pessoas</strong>
                 </p>
             </div>
             <div class="comentarios">
@@ -56,18 +56,15 @@ function Post(props) {
     )
 }
 
-
-
-
-
-
 export default function Publicações() {
+
+    const dados = [{ imgtitulo: caveira, titulo: "Mugiwaras", publi: alabasta, imgcurtida: vivi, nomecurtida: "Vivi", numcurtidas: "1.253.234", imgcomentario: crocodile, nomecomentario: "Crocodile", comentario: "Você me paga mugiwara!!!" },
+    { imgtitulo: barbabranca, titulo: "Newgate", publi: newgatevsroger, imgcurtida: oden, nomecurtida: "Oden", numcurtidas: "273.928", imgcomentario: oden, nomecomentario: "Oden", comentario: "Oque foi isso!?" },
+    { imgtitulo: ace, titulo: "Ace", publi: ace2, imgcurtida: luffy, nomecurtida: "luffy", numcurtidas: "12.253.234", imgcomentario: sabo, nomecomentario: "Sabo", comentario: "Você fez história irmão!" }]
+
     return (
         <>
-        <Post imgtitulo={caveira} titulo="Mugiwaras" publi={alabasta} imgcurtida={vivi} nomecurtida="Vivi" numcurtidas="1.253.234" imgcomentario={crocodile} nomecomentario="Crocodile" comentario="Você me paga mugiwara!!!"/>
-        <Post imgtitulo={barbabranca} titulo="Newgate" publi={newgatevsroger} imgcurtida={oden} nomecurtida="Oden" numcurtidas="273.928" imgcomentario={oden} nomecomentario="Oden" comentario="Oque foi isso!?"/>
-        <Post imgtitulo={ace} titulo="Ace" publi={ace2} imgcurtida={luffy} nomecurtida="luffy" numcurtidas="12.253.234" imgcomentario={sabo} nomecomentario="Sabo" comentario="Você fez história irmão!"/>   
+            {dados.map((d) => <Post imgtitulo={d.imgtitulo} titulo={d.titulo} publi={d.publi} imgcurtida={d.imgcurtida} nomecurtida={d.nomecurtida} numcurtidas={d.numcurtidas} imgcomentario={d.imgcomentario} nomecomentario={d.nomecomentario} comentario={d.comentario} />)}
         </>
     )
-
 }

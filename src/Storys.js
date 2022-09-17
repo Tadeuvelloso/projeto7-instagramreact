@@ -19,20 +19,16 @@ function Story(props) {
 
 }
 
-
-
 export default function Storys() {
+
+  const dados = [{ft:ace, nome:"Ace"}, {ft:sanji, nome:"Sanji"}, {ft:ussop, nome:"Ussop"}, {ft:barbabranca, nome:"Newgate"}, 
+  {ft:nami, nome:"Nami"}, {ft:roger, nome:"GolD.Roger"}, {ft:zoro, nome:"Zoro"}, {ft:shanks, nome:"Shanks"}]
+  
   return (
     <div class="caixa-storys">
       <ion-icon class="icon-seta" name="chevron-forward-circle"></ion-icon>
-      <Story img={ace} nome="Ace"/>
-      <Story img={sanji} nome="Sanji"/>
-      <Story img={ussop} nome="Ussop"/>
-      <Story img={barbabranca} nome="Newgate"/>
-      <Story img={nami} nome="Nami"/>
-      <Story img={roger} nome="GoldD.Roger"/>
-      <Story img={zoro} nome="Zoro"/>
-      <Story img={shanks} nome="Shanks"/>
+      {dados.map((d) => <Story img={d.ft} nome={d.nome}/> )}
     </div>
   )
 };
+
