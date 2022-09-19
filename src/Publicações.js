@@ -9,9 +9,14 @@ import ace from "../src/imagens/ace.jpg"
 import ace2 from "../src/imagens/ace2.jpg"
 import luffy from "../src/imagens/luffy.webp"
 import sabo from "../src/imagens/sabo.jpeg"
+import React from "react"
 
 
 function Post(props) {
+  
+    const [like, setLike] = React.useState(false);
+    const [save, setsalvo] = React.useState(false);
+  
     return (
         <div class="cx-publicacoes">
             <div class="titulo-publicacoes">
@@ -24,11 +29,11 @@ function Post(props) {
             <img class="img-publi" src={props.publi} />
             <div class="icones-publi">
                 <div>
-                    <ion-icon class="iconet" name="heart-outline"></ion-icon>
+                    {like ?  <ion-icon class="iconet" id="preenchido" name="heart" onClick={() => setLike(false)}></ion-icon> : <ion-icon class="iconet" name="heart-outline" onClick={() => setLike(true)}></ion-icon> }
                     <ion-icon class="iconet" name="chatbubble-outline"></ion-icon>
                     <ion-icon class="iconet" name="paper-plane-outline"></ion-icon>
                 </div>
-                <ion-icon class="icone" name="bookmark-outline"></ion-icon>
+                {save ? <ion-icon class="icone" name="bookmark" onClick={() => setsalvo(false)}></ion-icon> : <ion-icon class="icone" name="bookmark-outline" onClick={() => setsalvo(true)}></ion-icon>}
             </div>
             <div class="curtidas">
                 <img class="img-curtida" src={props.imgcurtida} />

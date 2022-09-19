@@ -4,17 +4,21 @@ import robin from "../src/imagens/robin.jpg"
 import rayleigh from "../src/imagens/rayleigh.jpg"
 import broky from "../src/imagens/broky.jpg"
 import franky from "../src/imagens/franky.jpg"
+import React from "react"
 
 function Usuario(props) {
-  let nome = "Luffy";
-  let imagem = `${luffy}`
-  function novoNome() {
+
+  const [imagem, setImagem] = React.useState(luffy);
+  const [nome, setNome] = React.useState("Luffy");
+
+  function novoNome(nome) {
     nome = prompt("Qual seu nome?");
-    console.log(nome)
+    setNome(nome);
   }
-  function novaImagem() {
+
+  function novaImagem(imagem) {
     imagem = prompt("Insira sua imagem: ");
-    console.log(imagem)
+    setImagem(imagem);
   }
 
   return (
@@ -50,6 +54,13 @@ function Sugestoes() {
 }
 
 function Users(props) {
+
+  const [follow, setFollow] = React.useState("Seguir");
+  function seguirVoce(follow) {
+    follow = "Seguindo"
+    setFollow(follow)
+  }
+
   return (
     <li>
       <div class="div-seletor">
@@ -59,7 +70,7 @@ function Users(props) {
           <p class="segue-vc">{props.status}</p>
         </div>
       </div>
-      <p class="seguir">Seguir</p>
+      <p class="seguir" onClick={seguirVoce}>{follow}</p>
     </li>
   )
 }
@@ -71,8 +82,6 @@ export default function Sidebar() {
   { imgpessoa: rayleigh, nome: "Rayleigh", status: "Novo no Instagram" },
   { imgpessoa: broky, nome: "Broky", status: "Segue você" },
   { imgpessoa: franky, nome: "Franky", status: "Segue você" }]
-
-
 
   return (
     <div class="container-direita">

@@ -263,7 +263,7 @@
     color: #b2dffc;
     background-color: white;
   }
-  .publicar :hover {
+  .publicar:hover {
     color: #0095f6;
     transition-duration: 300ms;
   }
@@ -325,6 +325,9 @@
     color: #139ef2;
     font-size: 12px;
   }
+  .seguir:hover{
+    cursor: pointer;
+  }
   .segue-vc {
     font-size: 12px;
     font-weight: 400;
@@ -340,10 +343,13 @@
     font-weight: 500;
     color: #8e8e8e;
   }
-
-  .pencil :hover{
+  .pencil:hover{
     color: black;
   }
+  #preenchido{
+    color:red;
+  }
+
 
   @media (max-width: 900px) {
     .container-direita {
