@@ -16,7 +16,24 @@ function Post(props) {
   
     const [like, setLike] = React.useState(false);
     const [save, setsalvo] = React.useState(false);
-  
+    const [cont, setCont] = React.useState(props.numcurtidas);
+
+    function mudaLike (){
+        if(!like){
+            setCont(cont + 0.001)
+        } else {
+            setCont(cont - 0.001)
+        }
+        setLike(!like)
+    }
+
+    function mudaLikeImagem () {
+        if(!like){
+            setLike(true)
+            setCont(cont + 0.001)
+        }
+    }
+
     return (
         <div class="cx-publicacoes">
             <div class="titulo-publicacoes">
@@ -26,10 +43,10 @@ function Post(props) {
                 </div>
                 <ion-icon name="ellipsis-horizontal"></ion-icon>
             </div>
-            <img class="img-publi" src={props.publi} />
+            <img class="img-publi" src={props.publi} onClick={mudaLikeImagem}/>
             <div class="icones-publi">
                 <div>
-                    {like ?  <ion-icon class="iconet" id="preenchido" name="heart" onClick={() => setLike(false)}></ion-icon> : <ion-icon class="iconet" name="heart-outline" onClick={() => setLike(true)}></ion-icon> }
+                    {like ?  <ion-icon class="iconet" id="preenchido" name="heart" onClick={mudaLike}></ion-icon> : <ion-icon class="iconet" name="heart-outline" onClick={mudaLike}></ion-icon> }
                     <ion-icon class="iconet" name="chatbubble-outline"></ion-icon>
                     <ion-icon class="iconet" name="paper-plane-outline"></ion-icon>
                 </div>
@@ -39,7 +56,7 @@ function Post(props) {
                 <img class="img-curtida" src={props.imgcurtida} />
                 <p>
                     Curtido por <strong>{props.nomecurtida}</strong> e 
-                    <strong> outras {props.numcurtidas} pessoas</strong>
+                    <strong> outras {cont} pessoas</strong>
                 </p>
             </div>
             <div class="comentarios">
@@ -63,9 +80,9 @@ function Post(props) {
 
 export default function Publicações() {
 
-    const dados = [{ imgtitulo: caveira, titulo: "Mugiwaras", publi: alabasta, imgcurtida: vivi, nomecurtida: "Vivi", numcurtidas: "1.253.234", imgcomentario: crocodile, nomecomentario: "Crocodile", comentario: "Você me paga mugiwara!!!" },
-    { imgtitulo: barbabranca, titulo: "Newgate", publi: newgatevsroger, imgcurtida: oden, nomecurtida: "Oden", numcurtidas: "273.928", imgcomentario: oden, nomecomentario: "Oden", comentario: "Oque foi isso!?" },
-    { imgtitulo: ace, titulo: "Ace", publi: ace2, imgcurtida: luffy, nomecurtida: "luffy", numcurtidas: "12.253.234", imgcomentario: sabo, nomecomentario: "Sabo", comentario: "Você fez história irmão!" }]
+    const dados = [{ imgtitulo: caveira, titulo: "Mugiwaras", publi: alabasta, imgcurtida: vivi, nomecurtida: "Vivi", numcurtidas: 253.234, imgcomentario: crocodile, nomecomentario: "Crocodile", comentario: "Você me paga mugiwara!!!" },
+    { imgtitulo: barbabranca, titulo: "Newgate", publi: newgatevsroger, imgcurtida: oden, nomecurtida: "Oden", numcurtidas: 273.928, imgcomentario: oden, nomecomentario: "Oden", comentario: "Oque foi isso!?" },
+    { imgtitulo: ace, titulo: "Ace", publi: ace2, imgcurtida: luffy, nomecurtida: "luffy", numcurtidas: 12.234, imgcomentario: sabo, nomecomentario: "Sabo", comentario: "Você fez história irmão!" }]
 
     return (
         <>

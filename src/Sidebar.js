@@ -13,11 +13,17 @@ function Usuario(props) {
 
   function novoNome(nome) {
     nome = prompt("Qual seu nome?");
+    if(!nome){
+      return
+    }
     setNome(nome);
   }
 
   function novaImagem(imagem) {
     imagem = prompt("Insira sua imagem: ");
+    if(!imagem){
+      return
+    }
     setImagem(imagem);
   }
 
@@ -25,7 +31,7 @@ function Usuario(props) {
     <div class="titu-suges">
       <img src={imagem} onClick={novaImagem} />
       <div>
-        <p class="nome">{nome}</p>
+        <p class="nome">Luffy</p>
         <p class="segue-vc">{nome}<span class="pencil" onClick={novoNome} ><ion-icon name="brush"></ion-icon></span></p>
       </div>
     </div>
